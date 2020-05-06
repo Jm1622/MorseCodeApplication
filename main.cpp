@@ -1,9 +1,11 @@
 #include <iostream>
-#include <MorseCodeParser.h>
+#include <MorseCodeTranslator.h>
 
 int main() {
-    std::string testString = "- . ... -\t-- . ... ... .- --. .";
-    MorseCodeParser *morseParser = new MorseCodeParser();
-    std::cout << morseParser->parse(testString) << '\n';
+    std::string testString = "Test Message";
+    MorseCodeTranslator *morseTranslator = new MorseCodeTranslator();
+    std::string morseString = morseTranslator->encode(testString);
+    std::cout << morseString << '\n';
+    std::cout << morseTranslator->decode(morseString) << '\n';
     return 0;
 }
